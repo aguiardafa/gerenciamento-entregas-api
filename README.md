@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Entregas - gerenciamento-entregas-api
+# gerenciamento-entregas-api
 
 Projeto Back-end "Rest API" de um `Sistema de Gerenciamento de Entregas`, implementado em Java com Spring Boot.
 
@@ -11,15 +11,15 @@ Projeto Back-end "Rest API" de um `Sistema de Gerenciamento de Entregas`, implem
 <a href="#backers" alt="Languege Portuguese">
 <img src="https://img.shields.io/badge/language-Portuguese-yellow" /></a>
 
-## Sistema de Gerenciamento de Entregas
+## Sistema de Gerenciamento de Entregas:
 
-Trata-se de um Sistema básico para cadastro e administração de entregas, sendo registrados os dados básicos da entrega, o Cliente e o Destinatário, bem como a possibilidade do cadastro de possíveis ocorrêcias relacionadas e o controle do fluxo da entrega, através do Status da entrega.
+Trata-se de um <b>sistema básico para gerência de entregas</b>, através do cadastro dos principais dados de um entrega, o registro dos vínculos com o respectivo Cliente e Destinatário e o controle do fluxo da entrega, por meio do Status da entrega. Ainda, possibilita o resgitro histórico de possíveis ocorrêcias relacionadas as entregas.
 
-<h2 align="center"><img alt="Imagem do Projeto" id="imagem" title="#Projeto" src="https://github.com/aguiardafa/gerenciamento-entregas-api/.github/Imagem.png" /></h2>
+<p align="center"><img alt="Imagem do Projeto" id="imagem" title="#Projeto" width="395px" height="395px" src="https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/.github/Image.png" /></p>
 
-O Projeto foi criado com fins acadêmicos, sendo construído como atividade do curso `Mergulho Spring REST (MSR)`, ocorrido de 10 a 17 de janeiro de 2022, promovido pela [AlgaWorks](https://www.algaworks.com/).
+Foi implementado com fins acadêmicos, sendo construído como atividade do curso `Mergulho Spring REST (MSR)`, ocorrido de 10 a 17 de janeiro de 2022, promovido pela [AlgaWorks](https://www.algaworks.com/).
 
-O projeto foi gerado com [Spring Initializr](https://start.spring.io/) - Spring Boot version 2.6.2.
+O projeto foi gerado com [Spring Initializr](https://start.spring.io/) - <b>Spring Boot version 2.6.2</b>.
 
 ### 🛒 Requisitos do Projeto:
 
@@ -50,11 +50,11 @@ As seguintes tecnologias/ferramentas foram utilizadas na construção do projeto
 
 ## Sobre o Curso Mergulho Spring REST (MSR)
 
-O curso é bem básico e voltado para que nunca desenvolveu uma REST API com Java e Spring, contudo possui uma abordagem bem didática e sempre fundamenta nos conceitos e boas práticas do mercado.
+O curso é bem básico e voltado para quem nunca desenvolveu uma REST API com Java e Spring. Contudo, possui uma abordagem bem didática e sempre fundamenta nos conceitos e boas práticas do mercado, sendo válido também como reforço para quem já possui experiência com a tecnologia utilizada.
 
-É 100% online e gratuito, e aborda os fundamentos de REST, os Métodos e códigos de status HTTP, a conceituação do Ecossistema Spring, a implementação de um <b>Sistema Back-end (REST API) Java</b> com Spring Boot e Spring MVC, a persistência de dados com Jakarta Persistence, Spring Data JPA e Flyway, validaççoes com Bean Validation e tratamento de exceptions.
+É 100% online e gratuito, e aborda os fundamentos de REST, os Métodos e códigos de status HTTP, a conceituação do Ecossistema Spring, a implementação de um Sistema Back-end (REST API) Java com Spring Boot e Spring MVC, a persistência de dados com Jakarta Persistence, Spring Data JPA e Flyway, validações com Bean Validation e tratamento de exceptions.
 
-Vale a pena aprender ou reforçar conhecimentos com o Curso da [AlgaWorks](https://www.algaworks.com/). Link para o curso [Mergulho Spring REST (MSR)](https://msr.algaworks.com/)
+Link para o curso [Mergulho Spring REST (MSR)](https://msr.algaworks.com/)
 
 ## 👨‍💻Autor
 
