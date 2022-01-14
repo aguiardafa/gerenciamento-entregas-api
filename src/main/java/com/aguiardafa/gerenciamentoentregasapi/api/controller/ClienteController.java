@@ -2,6 +2,7 @@ package com.aguiardafa.gerenciamentoentregasapi.api.controller;
 
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Cliente;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.ClienteRepository;
+import com.aguiardafa.gerenciamentoentregasapi.domain.service.CatalogoClienteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 public class ClienteController {
 
     private ClienteRepository clienteRepository;
+    private CatalogoClienteService catalogoClienteService;
 
     @GetMapping
     public List<Cliente> listar() {
@@ -32,7 +34,7 @@ public class ClienteController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
-        return clienteRepository.save(cliente);
+        return catalogoClienteService.salvar(cliente);
     }
 
     @PutMapping("/{clienteId}")
@@ -43,7 +45,7 @@ public class ClienteController {
             return ResponseEntity.notFound().build();
         } else {
             cliente.setId(clienteId);
-            return ResponseEntity.ok(clienteRepository.save(cliente));
+            return ResponseEntity.ok(catalogoClienteService.salvar(cliente));
         }
     }
 
@@ -52,7 +54,7 @@ public class ClienteController {
         if (!clienteRepository.existsById(clienteId)) {
             return ResponseEntity.notFound().build();
         }
-        clienteRepository.deleteById(clienteId);
+        catalogoClienteService.excluir(clienteId);
         return ResponseEntity.noContent().build();
     }
 }
