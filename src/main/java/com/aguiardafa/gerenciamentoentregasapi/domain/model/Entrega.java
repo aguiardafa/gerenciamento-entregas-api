@@ -31,6 +31,7 @@ public class Entrega {
 
     @Embedded
     @NotNull
+    @Valid
     private Destinatario destinatario;
 
     @NotNull
