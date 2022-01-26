@@ -1,5 +1,8 @@
 package com.aguiardafa.gerenciamentoentregasapi.api.controller;
 
+import com.aguiardafa.gerenciamentoentregasapi.api.mapper.ClienteMapper;
+import com.aguiardafa.gerenciamentoentregasapi.api.model.ClienteRequest;
+import com.aguiardafa.gerenciamentoentregasapi.api.model.ClienteResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Cliente;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.ClienteRepository;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.CatalogoClienteService;
@@ -18,34 +21,39 @@ public class ClienteController {
 
     private ClienteRepository clienteRepository;
     private CatalogoClienteService catalogoClienteService;
+    private ClienteMapper clienteMapper;
 
     @GetMapping
-    public List<Cliente> listar() {
-        return clienteRepository.findAll();
+    public List<ClienteResponse> listar() {
+        return clienteMapper.toCollectionResponse(clienteRepository.findAll());
     }
 
     @GetMapping("/{clienteId}")
-    public ResponseEntity<Cliente> buscar(@PathVariable Long clienteId) {
+    public ResponseEntity<ClienteResponse> buscar(@PathVariable Long clienteId) {
         return clienteRepository.findById(clienteId)
-                .map(cliente -> ResponseEntity.ok(cliente))
+                .map(cliente -> ResponseEntity.ok(clienteMapper.toResponse(cliente)))
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
-        return catalogoClienteService.salvar(cliente);
+    public ClienteResponse adicionar(@Valid @RequestBody ClienteRequest clienteRequest) {
+        Cliente novoCliente = clienteMapper.toModel(clienteRequest);
+        Cliente clienteAdicionado = catalogoClienteService.salvar(novoCliente);
+        return clienteMapper.toResponse(clienteAdicionado);
     }
 
     @PutMapping("/{clienteId}")
-    public ResponseEntity<Cliente> atualizar(@Valid
-                                             @PathVariable Long clienteId,
-                                             @RequestBody Cliente cliente) {
+    public ResponseEntity<ClienteResponse> atualizar(@Valid
+                                                     @PathVariable Long clienteId,
+                                                     @RequestBody ClienteRequest clienteRequest) {
         if (!clienteRepository.existsById(clienteId)) {
             return ResponseEntity.notFound().build();
         } else {
+            Cliente cliente = clienteMapper.toModel(clienteRequest);
             cliente.setId(clienteId);
-            return ResponseEntity.ok(catalogoClienteService.salvar(cliente));
+            Cliente clienteAtualizado = catalogoClienteService.salvar(cliente);
+            return ResponseEntity.ok(clienteMapper.toResponse(clienteAtualizado));
         }
     }
 
