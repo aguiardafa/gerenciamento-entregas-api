@@ -13,7 +13,7 @@ public class EntregaRequest {
 
     @Valid
     @NotNull
-    private ClienteResumoRequest cliente;
+    private ClienteIdRequest cliente;
 
     @Valid
     @NotNull

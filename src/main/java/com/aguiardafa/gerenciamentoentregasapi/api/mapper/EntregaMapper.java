@@ -26,7 +26,8 @@ public class EntregaMapper {
                 .collect(Collectors.toList());
     }
 
-    public Entrega toModel(EntregaRequest request){
+    public Entrega toModel(EntregaRequest request) {
         return modelMapper.map(request, Entrega.class);
     }
+
 }
