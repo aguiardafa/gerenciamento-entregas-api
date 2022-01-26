@@ -1,5 +1,6 @@
 package com.aguiardafa.gerenciamentoentregasapi.api.mapper;
 
+import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
 import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import lombok.AllArgsConstructor;
@@ -23,5 +24,9 @@ public class EntregaMapper {
         return entregas.stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
+    }
+
+    public Entrega toModel(EntregaRequest request){
+        return modelMapper.map(request, Entrega.class);
     }
 }

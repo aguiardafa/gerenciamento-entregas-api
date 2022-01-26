@@ -1,6 +1,7 @@
 package com.aguiardafa.gerenciamentoentregasapi.api.controller;
 
 import com.aguiardafa.gerenciamentoentregasapi.api.mapper.EntregaMapper;
+import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
 import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.EntregaRepository;
@@ -24,8 +25,9 @@ public class EntregaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public EntregaResponse solicitar(@Valid @RequestBody Entrega entrega) {
-        Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(entrega);
+    public EntregaResponse solicitar(@Valid @RequestBody EntregaRequest entregaRequest) {
+        Entrega novaEntrega = entregaMapper.toModel(entregaRequest);
+        Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(novaEntrega);
         return entregaMapper.toResponse(entregaSolicitada);
     }
 
