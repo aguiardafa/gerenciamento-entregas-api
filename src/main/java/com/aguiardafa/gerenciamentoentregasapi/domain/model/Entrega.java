@@ -38,7 +38,7 @@ public class Entrega {
     @NotNull
     private BigDecimal taxa;
 
-    @OneToMany(mappedBy = "entrega")
+    @OneToMany(mappedBy = "entrega", cascade = CascadeType.ALL)
     private List<Ocorrencia> ocorrencias = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
@@ -50,4 +50,15 @@ public class Entrega {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataFinalizacao;
+
+    public Ocorrencia adicionarOcorrencia(String descricao) {
+        Ocorrencia ocorrencia = new Ocorrencia();
+        ocorrencia.setEntrega(this);
+        ocorrencia.setDescricao(descricao);
+        ocorrencia.setDataRegistro(OffsetDateTime.now());
+
+        this.getOcorrencias().add(ocorrencia);
+
+        return ocorrencia;
+    }
 }
