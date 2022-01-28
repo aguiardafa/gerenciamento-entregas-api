@@ -19,7 +19,7 @@ Trata-se de um <b>sistema básico para gerência de entregas</b>, através do ca
 
 Foi implementado com fins acadêmicos, sendo construído como atividade do curso `Mergulho Spring REST (MSR)`, ocorrido de 10 a 17 de janeiro de 2022, promovido pela [AlgaWorks](https://www.algaworks.com/).
 
-O projeto foi gerado com [Spring Initializr](https://start.spring.io/) - <b>Spring Boot version 2.6.2</b>.
+O projeto foi gerado com [Spring Initializer](https://start.spring.io/) - <b>Spring Boot version 2.6.2</b>.
 
 ### 🛒 Requisitos do Projeto:
 
@@ -35,11 +35,15 @@ Antes de começar, você vai precisar ter instalado em sua máquina os seguintes
 ### 📀 Para executar o Projeto:
 
 1. Baixe este Repositório, executando o comando Git: `git clone https://github.com/aguiardafa/gerenciamento-entregas-api`;
-2. ....
+2. Execute o comando Maven `mvn clean install` pelo terminal, aberto na raiz da pasta do Repositório, para baixar as dependências do projeto através do Maven;
+3. Ainda pelo terminal, aberto na raiz da pasta do Repositório, execute o comando Maven `mvn spring-boot:run` para executar a aplicação; e
+- <b>Obs.: </b>A mensagem que aparece no final <b>"Tomcat started on port(s): 8080 (http)"</b> significa que a Aplicação Web foi inciada e está acessível na porta 8080.
+4. Acesse a url `http://localhost:8080/entregas` pelo navegador para visualizar o Sistema.
+- <b>Dica: </b>Caso queira uma melhor experiência de acesso aos Endpoints da API, é recomendado utilizar algum API Client, que facilita a interação e visualização de APIs, por exemplo o [Postman](https://www.getpostman.com/) (importe o arquivo [EntregasAPI.postman_collection.json](https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/EntregasAPI.postman_collection.json) no Postman, que todos Endpoints da API serão disponibilizados para interação).
 
 ### 🛠 Tecnologias/ferramentas utilizadas:
 
-As seguintes tecnologias/ferramentas foram utilizadas na construção do projeto:
+As seguintes tecnologias/ferramentas/conceitos foram utilizadas na construção do projeto:
 
 - [Spring](https://spring.io/)
 - [JPA](https://pt.wikipedia.org/wiki/Java_Persistence_API)
@@ -47,7 +51,14 @@ As seguintes tecnologias/ferramentas foram utilizadas na construção do projeto
 - [Postman](https://www.getpostman.com/) *Testar os Endpoints da API
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/) *Confirmar alterações no DB do Sistema
 - [Flyway Database migrations](https://flywaydb.org/)
-- .....
+- [Bean Validation](https://beanvalidation.org/)
+- [Exception Handler](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc)
+- [Json Property](https://qastack.com.br/programming/12583638/when-is-the-jsonproperty-property-used-and-what-is-it-used-for)
+- [OffsetDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html)
+- [Model Mapper](http://modelmapper.org/getting-started/)
+- [Arquitetura DDD](https://www.devmedia.com.br/java-e-domain-driven-design-na-pratica-java-magazine-87/19019)
+- [Padrão REST API](https://restfulapi.net/)
+- [Karma Commit Messages](http://karma-runner.github.io/1.0/dev/git-commit-msg.html)
 
 '* Ferramentas opcionais
 
@@ -55,7 +66,7 @@ As seguintes tecnologias/ferramentas foram utilizadas na construção do projeto
 
 O curso é bem básico e voltado para quem nunca desenvolveu uma REST API com Java e Spring. Contudo, possui uma abordagem bem didática e sempre fundamenta nos conceitos e boas práticas do mercado, sendo válido também como reforço para quem já possui experiência com a tecnologia utilizada.
 
-É 100% online e gratuito, e aborda os fundamentos de REST, os Métodos e códigos de status HTTP, a conceituação do Ecossistema Spring, a implementação de um Sistema Back-end (REST API) Java com Spring Boot e Spring MVC, a persistência de dados com Jakarta Persistence, Spring Data JPA e Flyway, validações com Bean Validation e tratamento de exceptions.
+É 100% online e gratuito, e aborda os fundamentos de REST, os Métodos e Códigos de status HTTP, a conceituação do Ecossistema Spring, a implementação de um Sistema Back-end (REST API) Java com Spring Boot e Spring MVC, a persistência de dados com Jakarta Persistence, Spring Data JPA e Flyway, validações com Bean Validation e tratamento de exceptions.
 
 Link para o curso [Mergulho Spring REST (MSR)](https://msr.algaworks.com/)
 
