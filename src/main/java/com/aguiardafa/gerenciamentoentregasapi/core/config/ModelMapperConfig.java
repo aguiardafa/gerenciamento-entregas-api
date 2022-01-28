@@ -1,4 +1,4 @@
-package com.aguiardafa.gerenciamentoentregasapi.common;
+package com.aguiardafa.gerenciamentoentregasapi.core.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

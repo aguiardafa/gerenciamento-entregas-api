@@ -1,4 +1,4 @@
-package com.aguiardafa.gerenciamentoentregasapi.api.exceptionhandler;
+package com.aguiardafa.gerenciamentoentregasapi.api.http.advices.exceptionhandler;
 
 import com.aguiardafa.gerenciamentoentregasapi.domain.exception.EntidadeNaoEncontradaException;
 import com.aguiardafa.gerenciamentoentregasapi.domain.exception.NegocioException;

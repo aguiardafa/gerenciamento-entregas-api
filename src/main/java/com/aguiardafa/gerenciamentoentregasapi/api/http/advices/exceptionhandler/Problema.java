@@ -1,4 +1,4 @@
-package com.aguiardafa.gerenciamentoentregasapi.api.exceptionhandler;
+package com.aguiardafa.gerenciamentoentregasapi.api.http.advices.exceptionhandler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

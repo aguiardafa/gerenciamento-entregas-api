@@ -1,7 +1,7 @@
-package com.aguiardafa.gerenciamentoentregasapi.api.mapper;
+package com.aguiardafa.gerenciamentoentregasapi.core.mapper;
 
-import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
-import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.request.EntregaRequest;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.response.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

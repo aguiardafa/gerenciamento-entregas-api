@@ -1,8 +1,8 @@
 package com.aguiardafa.gerenciamentoentregasapi.api.controller;
 
-import com.aguiardafa.gerenciamentoentregasapi.api.mapper.OcorrenciaMapper;
-import com.aguiardafa.gerenciamentoentregasapi.api.model.OcorrenciaRequest;
-import com.aguiardafa.gerenciamentoentregasapi.api.model.OcorrenciaResponse;
+import com.aguiardafa.gerenciamentoentregasapi.core.mapper.OcorrenciaMapper;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.request.OcorrenciaRequest;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.response.OcorrenciaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Ocorrencia;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.BuscaEntregaService;

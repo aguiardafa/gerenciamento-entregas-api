@@ -1,8 +1,8 @@
 package com.aguiardafa.gerenciamentoentregasapi.api.controller;
 
-import com.aguiardafa.gerenciamentoentregasapi.api.mapper.EntregaMapper;
-import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
-import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
+import com.aguiardafa.gerenciamentoentregasapi.core.mapper.EntregaMapper;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.request.EntregaRequest;
+import com.aguiardafa.gerenciamentoentregasapi.api.http.resources.response.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.EntregaRepository;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.CancelamentoEntregaService;

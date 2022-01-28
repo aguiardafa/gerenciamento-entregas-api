@@ -1,4 +1,4 @@
-package com.aguiardafa.gerenciamentoentregasapi.api.model;
+package com.aguiardafa.gerenciamentoentregasapi.api.http.resources.response;
 
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.StatusEntrega;
 import lombok.Getter;
