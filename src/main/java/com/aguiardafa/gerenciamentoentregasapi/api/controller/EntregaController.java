@@ -5,6 +5,7 @@ import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
 import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.EntregaRepository;
+import com.aguiardafa.gerenciamentoentregasapi.domain.service.CancelamentoEntregaService;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.FinalizacaoEntregaService;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.SolicitacaoEntregaService;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class EntregaController {
     private EntregaRepository entregaRepository;
     private EntregaMapper entregaMapper;
     private FinalizacaoEntregaService finalizacaoEntregaService;
+    private CancelamentoEntregaService cancelamentoEntregaService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -49,6 +51,12 @@ public class EntregaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void finalizar(@PathVariable Long entregaId) {
         finalizacaoEntregaService.finalizar(entregaId);
+    }
+
+    @PutMapping("/{entregaId}/cancelamento")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void cancelar(@PathVariable Long entregaId) {
+        cancelamentoEntregaService.cancelar(entregaId);
     }
 
 }
