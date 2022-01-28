@@ -5,6 +5,7 @@ import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaRequest;
 import com.aguiardafa.gerenciamentoentregasapi.api.model.EntregaResponse;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Entrega;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.EntregaRepository;
+import com.aguiardafa.gerenciamentoentregasapi.domain.service.FinalizacaoEntregaService;
 import com.aguiardafa.gerenciamentoentregasapi.domain.service.SolicitacaoEntregaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ public class EntregaController {
     private SolicitacaoEntregaService solicitacaoEntregaService;
     private EntregaRepository entregaRepository;
     private EntregaMapper entregaMapper;
+    private FinalizacaoEntregaService finalizacaoEntregaService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -42,4 +44,11 @@ public class EntregaController {
                 .map(entrega -> ResponseEntity.ok(entregaMapper.toResponse(entrega)))
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @PutMapping("/{entregaId}/finalizacao")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void finalizar(@PathVariable Long entregaId) {
+        finalizacaoEntregaService.finalizar(entregaId);
+    }
+
 }

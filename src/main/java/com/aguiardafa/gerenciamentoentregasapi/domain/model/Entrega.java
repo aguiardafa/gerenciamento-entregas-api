@@ -1,6 +1,7 @@
 package com.aguiardafa.gerenciamentoentregasapi.domain.model;
 
 import com.aguiardafa.gerenciamentoentregasapi.domain.ValidationGroups;
+import com.aguiardafa.gerenciamentoentregasapi.domain.exception.NegocioException;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -61,4 +62,21 @@ public class Entrega {
 
         return ocorrencia;
     }
+
+    public void finalizar() {
+        if (naoPodeSerFinalizada()) {
+            throw new NegocioException("Entrega não pode ser finalizada.");
+        }
+        setStatus(StatusEntrega.FINALIZADA);
+        setDataFinalizacao(OffsetDateTime.now());
+    }
+
+    public boolean naoPodeSerFinalizada() {
+        return !podeSerFinalizada();
+    }
+
+    public boolean podeSerFinalizada() {
+        return StatusEntrega.PEDENTE.equals(getStatus());
+    }
+
 }
