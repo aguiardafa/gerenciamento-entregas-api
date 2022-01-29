@@ -15,7 +15,7 @@ Projeto Back-end "Rest API" de um `Sistema de Gerenciamento de Entregas`, implem
 
 Trata-se de um <b>sistema básico para gerência de entregas</b>, através do cadastro dos principais dados de uma entrega, o registro dos vínculos com o respectivo Cliente e Destinatário, e o controle do fluxo da entrega, por meio do Status da entrega. Ainda, possibilita o registro histórico de possíveis ocorrências relacionadas as entregas.
 
-<p align="center"><img alt="Imagem do Projeto" id="imagem" title="#Projeto" width="395px" height="395px" src="https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/.github/Image.png" /></p>
+<p align="center"><img alt="Imagem do Projeto" id="imagem" title="#Projeto" height="400px" src="https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/.github/Image.png" /></p>
 
 Foi implementado com fins acadêmicos, sendo construído como atividade do curso `Mergulho Spring REST (MSR)`, ocorrido de 10 a 17 de janeiro de 2022, promovido pela [AlgaWorks](https://www.algaworks.com/).
 
@@ -68,11 +68,13 @@ As seguintes tecnologias/ferramentas/conceitos foram utilizadas na construção 
 
 ## Sobre o Curso Mergulho Spring REST (MSR)
 
-O curso é bem básico e voltado para quem nunca desenvolveu uma REST API com Java e Spring. Contudo, possui uma abordagem bem didática e sempre fundamenta nos conceitos e boas práticas do mercado, sendo válido também como reforço para quem já possui experiência com a tecnologia utilizada.
+O curso é bem básico e voltado para quem nunca desenvolveu uma REST API com Java e Spring. Contudo, possui uma abordagem bem didática e sempre fundamentada nos conceitos e documentações, bem como nas boas práticas do mercado. Assim sendo, também faz-se válido como reforço para quem já possui experiência com a tecnologia utilizada.
 
 É 100% online e gratuito, e aborda os fundamentos de REST, os Métodos e Códigos de status HTTP, a conceituação do Ecossistema Spring, a implementação de um Sistema Back-end (REST API) Java com Spring Boot e Spring MVC, a persistência de dados com Jakarta Persistence, Spring Data JPA e Flyway, validações com Bean Validation e tratamento de exceptions.
 
 Link para o curso [Mergulho Spring REST (MSR)](https://msr.algaworks.com/)
+
+<p align="center"><img alt="Vídeo do Projeto" id="video1" title="#VideoProjeto" height="450px" src="https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/.github/Video1.gif" /></p>
 
 ## 👨‍💻Autor
 
