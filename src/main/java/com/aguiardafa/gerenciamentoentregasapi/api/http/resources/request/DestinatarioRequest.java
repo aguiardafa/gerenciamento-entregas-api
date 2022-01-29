@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -13,15 +14,13 @@ public class DestinatarioRequest {
     private String nome;
 
     @NotBlank
-    private String logradouro;
+    @Size(min = 7, max = 8)
+    private String cep;
 
     @NotBlank
     private String numero;
 
     @NotBlank
     private String complemento;
-
-    @NotBlank
-    private String bairro;
 
 }

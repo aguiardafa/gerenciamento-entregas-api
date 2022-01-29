@@ -45,14 +45,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/clientes/4",
+							"raw": "localhost:8080/clientes/1",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"clientes",
-								"4"
+								"1"
 							]
 						}
 					},
@@ -65,7 +65,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"Nadia2\",\n    \"email\": \"na@gmail.com\",\n    \"telefone\": \"(21) 92234-1234\"\n}",
+							"raw": "{\n    \"nome\": \"Fulano\",\n    \"email\": \"fufu@gmail.com\",\n    \"telefone\": \"(21) 92234-1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -99,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"nome\": \"Nadia2\",\n    \"email\": \"na@gmail.com\",\n    \"telefone\": \"(21) 92234-1234\"\n}",
+							"raw": "{\n    \"nome\": \"Fulano da Silva\",\n    \"email\": \"fufu.sasa@gmail.com\",\n    \"telefone\": \"(21) 92234-1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -151,7 +151,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cliente\": {\n        \"id\":5 \n    },\n    \"destinatario\": {\n        \"nome\": \"Casa Seu Leo\",\n        \"logradouro\": \"Rua Antonio Cordeiro\",\n        \"numero\": \"443\",\n        \"bairro\": \"Freguesia\",\n        \"complemento\": \"Apto 101\"\n    },\n    \"taxa\": 100.50\n}",
+							"raw": "{\n    \"cliente\": {\n        \"id\":1333 \n    },\n    \"destinatario\": {\n        \"nome\": \"Casa do Zé\",\n        \"cep\": \"22743041\",\n        \"numero\": \"1234\",\n        \"complemento\": \"Apto 123\"\n    },\n    \"taxa\": 100.50\n}",
 							"options": {
 								"raw": {
 									"language": "json"
