@@ -19,6 +19,8 @@ Trata-se de um <b>sistema básico para gerência de entregas</b>, através do ca
 
 Foi implementado com fins acadêmicos, sendo construído como atividade do curso `Mergulho Spring REST (MSR)`, ocorrido de 10 a 17 de janeiro de 2022, promovido pela [AlgaWorks](https://www.algaworks.com/).
 
+Para finalizar o Projeto e concluir, por hora, meus estudos, implementei a funcionalidade de cancelamento de entrega e o consumo da API ViaCEP para preencher automaticamente o endereço das entregas com base no informe do CEP na solicitação de entrega, ambas fora do escopo do Curso da Algaworks.
+
 O projeto foi gerado com [Spring Initializer](https://start.spring.io/) - <b>Spring Boot version 2.6.2</b>.
 
 ### 🛒 Requisitos do Projeto:
@@ -59,6 +61,8 @@ As seguintes tecnologias/ferramentas/conceitos foram utilizadas na construção 
 - [Arquitetura DDD](https://www.devmedia.com.br/java-e-domain-driven-design-na-pratica-java-magazine-87/19019)
 - [Padrão REST API](https://restfulapi.net/)
 - [Karma Commit Messages](http://karma-runner.github.io/1.0/dev/git-commit-msg.html)
+- [Spring REST Client - RestTemplate](https://www.baeldung.com/rest-template)
+- [Brazilian zip code API - ViaCEP](https://viacep.com.br/)
 
 '* Ferramentas opcionais
 

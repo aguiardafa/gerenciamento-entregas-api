@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL) // Não inclui os campos nulos no corpo da resposta.
 public class ErrorMessageResponse {
 
     private Integer HttpStatus;

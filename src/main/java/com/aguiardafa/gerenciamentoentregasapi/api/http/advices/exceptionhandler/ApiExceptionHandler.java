@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@ControllerAdvice
+@ControllerAdvice // Tratar exceções de forma global (para todos os controladores)
 @AllArgsConstructor
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -31,9 +31,10 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
                                                                   HttpHeaders headers, HttpStatus status, WebRequest request) {
         List<ErrorMessageResponse.Argumento> argumentosInvalidos = new ArrayList<>();
         for (ObjectError error : ex.getBindingResult().getAllErrors()) {
-            String errorName = ((FieldError) error).getField();
-            String errorMessage = messageSource.getMessage(error, LocaleContextHolder.getLocale());
-            argumentosInvalidos.add(new ErrorMessageResponse.Argumento(errorName, errorMessage));
+            //String mensagemErroNaoTratada = error.getDefaultMessage(); // (utilizar mensagem padrão de erro)
+            String campoErro = ((FieldError) error).getField();
+            String mensagemErro = messageSource.getMessage(error, LocaleContextHolder.getLocale());
+            argumentosInvalidos.add(new ErrorMessageResponse.Argumento(campoErro, mensagemErro));
         }
         ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse();
         errorMessageResponse.setHttpStatus(status.value());
