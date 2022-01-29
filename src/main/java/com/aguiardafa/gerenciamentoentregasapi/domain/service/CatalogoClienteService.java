@@ -1,5 +1,6 @@
 package com.aguiardafa.gerenciamentoentregasapi.domain.service;
 
+import com.aguiardafa.gerenciamentoentregasapi.domain.exception.EntidadeNaoEncontradaException;
 import com.aguiardafa.gerenciamentoentregasapi.domain.exception.NegocioException;
 import com.aguiardafa.gerenciamentoentregasapi.domain.model.Cliente;
 import com.aguiardafa.gerenciamentoentregasapi.domain.repository.ClienteRepository;
@@ -15,7 +16,7 @@ public class CatalogoClienteService {
 
     public Cliente buscar(Long clienteId) {
         return clienteRepository.findById(clienteId)
-                .orElseThrow(() -> new NegocioException("Cliente não encontrado."));
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Cliente não encontrado."));
     }
 
     @Transactional
