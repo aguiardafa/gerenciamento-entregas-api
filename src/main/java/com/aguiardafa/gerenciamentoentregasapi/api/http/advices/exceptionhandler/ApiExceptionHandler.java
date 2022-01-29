@@ -29,43 +29,43 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers, HttpStatus status, WebRequest request) {
-        List<Problema.Campo> campos = new ArrayList<>();
+        List<ErrorMessageResponse.Argumento> argumentosInvalidos = new ArrayList<>();
         for (ObjectError error : ex.getBindingResult().getAllErrors()) {
-            String nome = ((FieldError) error).getField();
-            String mensagem = messageSource.getMessage(error, LocaleContextHolder.getLocale());
-            campos.add(new Problema.Campo(nome, mensagem));
+            String errorName = ((FieldError) error).getField();
+            String errorMessage = messageSource.getMessage(error, LocaleContextHolder.getLocale());
+            argumentosInvalidos.add(new ErrorMessageResponse.Argumento(errorName, errorMessage));
         }
-        Problema problema = new Problema();
-        problema.setStatus(status.value());
-        problema.setDataHora(OffsetDateTime.now());
-        problema.setTitulo("Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente.");
-        problema.setCampos(campos);
-        return handleExceptionInternal(ex, problema, headers, status, request);
+        ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse();
+        errorMessageResponse.setHttpStatus(status.value());
+        errorMessageResponse.setDataHora(OffsetDateTime.now());
+        errorMessageResponse.setMensagem("Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente.");
+        errorMessageResponse.setArgumentos(argumentosInvalidos);
+        return handleExceptionInternal(ex, errorMessageResponse, headers, status, request);
     }
 
     @ExceptionHandler(NegocioException.class)
     public ResponseEntity<Object> handleNegocioException(NegocioException ex, WebRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
 
-        Problema problema = new Problema();
-        problema.setStatus(status.value());
-        problema.setDataHora(OffsetDateTime.now());
-        problema.setTitulo(ex.getMessage());
+        ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse();
+        errorMessageResponse.setHttpStatus(status.value());
+        errorMessageResponse.setDataHora(OffsetDateTime.now());
+        errorMessageResponse.setMensagem(ex.getMessage());
 
         HttpHeaders headers = new HttpHeaders();
-        return handleExceptionInternal(ex, problema, headers, status, request);
+        return handleExceptionInternal(ex, errorMessageResponse, headers, status, request);
     }
 
     @ExceptionHandler(EntidadeNaoEncontradaException.class)
     public ResponseEntity<Object> handleEntidadeNaoEncontradaException(EntidadeNaoEncontradaException ex, WebRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
 
-        Problema problema = new Problema();
-        problema.setStatus(status.value());
-        problema.setDataHora(OffsetDateTime.now());
-        problema.setTitulo(ex.getMessage());
+        ErrorMessageResponse errorMessageResponse = new ErrorMessageResponse();
+        errorMessageResponse.setHttpStatus(status.value());
+        errorMessageResponse.setDataHora(OffsetDateTime.now());
+        errorMessageResponse.setMensagem(ex.getMessage());
 
         HttpHeaders headers = new HttpHeaders();
-        return handleExceptionInternal(ex, problema, headers, status, request);
+        return handleExceptionInternal(ex, errorMessageResponse, headers, status, request);
     }
 }

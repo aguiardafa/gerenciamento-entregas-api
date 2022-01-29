@@ -11,16 +11,17 @@ import java.util.List;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Problema {
-    private Integer status;
+public class ErrorMessageResponse {
+
+    private Integer HttpStatus;
     private OffsetDateTime dataHora;
-    private String titulo;
-    private List<Campo> campos;
+    private String mensagem;
+    private List<Argumento> argumentos;
 
     @AllArgsConstructor
     @Getter
-    public static class Campo {
-        private String nome;
+    public static class Argumento {
+        private String campo;
         private String mensagem;
     }
 }
