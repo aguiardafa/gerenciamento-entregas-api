@@ -42,6 +42,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina os seguintes
 - <b>Obs.: </b>A mensagem que aparece no final <b>"Tomcat started on port(s): 8080 (http)"</b> significa que a Aplicação Web foi inciada e está acessível na porta 8080.
 4. Acesse a url `http://localhost:8080/entregas` pelo navegador para visualizar o Sistema.
 - <b>Dica: </b>Caso queira uma melhor experiência de acesso aos Endpoints da API, é recomendado utilizar algum API Client, que facilita a interação e visualização de APIs, por exemplo o [Postman](https://www.getpostman.com/) (importe o arquivo [EntregasAPI.postman_collection.json](https://raw.githubusercontent.com/aguiardafa/gerenciamento-entregas-api/main/EntregasAPI.postman_collection.json) no Postman, que todos Endpoints da API serão disponibilizados para interação).
+- Acesse a url `http://localhost:8080/swagger-ui.html` para visualizar o swagger da api.
 
 ### 🛠 Tecnologias/ferramentas utilizadas:
 
